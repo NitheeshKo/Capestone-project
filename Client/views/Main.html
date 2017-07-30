@@ -1,0 +1,74 @@
+<div class="container">
+	<!--<div id="showLessMore" class="container" ng-class="{show: showLM}">
+		Hello!</br>
+		Hello!</br>
+		Hello!</br>
+		Hello!</br>
+		Hello!</br>
+		Hello!</br>
+	</div>
+	<button ng-click="show = true">Show text</button>
+	<md-content class="md-padding" layout-xs="column" layout="row">	
+		<md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+			<md-card-title>
+				<md-card-title-text>
+					<span class="md-headline">Card with image</span>
+					<span class="md-subhead">Large</span>
+				</md-card-title-text>
+				<md-card-title-media>
+					<div class="md-media-lg card-media"></div>
+				</md-card-title-media>
+			</md-card-title>
+			<md-card-actions layout="row" layout-align="end center">
+				<md-button>Action 1</md-button>
+				<md-button>Action 2</md-button>
+			</md-card-actions>
+		</md-card>
+	</md-content>-->
+	
+	<div class="row row-content">
+		<div class="col-xs-12 col-sm-3" style="height:100%;">
+			<ul class="nav nav-sidebar" style="background-color:#bdbdbd;">
+				<li ng-click="showHomeFunc()" ng-class="{active:showHome}" ng-style="HomeStyle"><a href="#"><span class="glyphicons glyphicons-home"></span><h4> Home</h4></a></li>
+				<li ng-click="showStudentsFunc()" ng-class="{active:showUpdates}" ng-style="StudentStyle"><a href="#"><span class="glyphicons glyphicons-group"></span><h4> Student activities</h4></a></li>
+				<li ng-click="showLibraryFunc()" ng-class="{active:showAccomplishmints}" ng-style="LibraryStyle"><a href="#"><span class="glyphicons glyphicons-blog"></span><h4> Library</h4></a></li>
+			</ul>
+		</div>
+	
+		<div class="col-xs-12 col-sm-9">
+			<div class="row row-content" ng-if="showHome">
+				<!--<div class="col-xs-12 col-sm-3 col-sm-push-9">
+					<p style="padding:20px;"></p>-->
+					<h1 align=center>O M Institute of Arts</h3>
+				<!--</div>
+				<div class="col-xs-12 col-sm-9 col-sm-pull-3">-->
+					<h4>O M Institute of Arts is one among the top institutions in the field, providing high quality education to bring out skilled graduates.<br><br>
+
+					The greenery campus provides the state of art infrastructure and facilities. The institute provides an ideal ambience for teaching-learning process, co-curricular and extra-curricular activities to achieve excellence in education, research and promotion of entrepreneurship.<br><br>
+
+					The institute has consistently produced skilled and outstanding graduates who have excelled in their career and occupied responsible positions in some of the best known enterprises across the globe.<br><br>
+					</h4>
+				<!--</div>-->
+			</div>
+
+			<div class="row row-content" ng-if="showStudents">
+				<h1 align=center>Student Activities</h3>
+				<!--</div>
+				<div class="col-xs-12 col-sm-9 col-sm-pull-3">-->
+					<h4>Evergreen students run more than 70 different groups focusing on art, politics, science, gaming, crafts, and so much more.<br><br>
+						<ul>
+						<li>Engage with your academic interests in new ways outside of the classroom.</li><br>
+						<li>Help people on campus or in the wider world.</li><br>
+						<li>Enjoy your favorite arts and hobbies with other Greeners.</li><br>
+						<li>Meet people with similar interests and develop life-long friendships.</li><br>
+					</h4>
+			</div>
+
+			<div class="row row-content" ng-if="showLibrary">
+				<h1 align=center>Library</h3>
+				<h4>Library is an essential part of every institution which helps staff and students to enhance the knowledge through various resources such as books, Newspapers, Journals, Magazines and Electronic Library. Our institution library provides Borrowing, Book Bank, OPAC, Reference services, digital library with high speed internet facilities , Reprographic, Wi-Fi etc,.<br><br>
+
+				In addition to the general library, the Engineering departments have exclusive department libraries also for quick and easy access of books by staff and students<br><br></h4>
+		</div>
+	</div>
+</div>

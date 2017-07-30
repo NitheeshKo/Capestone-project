@@ -1,0 +1,217 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+               <ul class="breadcrumb">
+                   <li><a href="#">Home</a></li>
+                   <li class="active">Enter details</li>
+               </ul>
+            </div> 
+        </div>
+        
+	   <div class="row row-content">
+           <div class="col-xs-12">
+              <h3>Add a student</h3> 
+           </div>
+            <div class="col-xs-12 col-sm-9">
+                <form class="form-horizontal" role="form" name="addStudentFrom" ng-submit="addStudent()" novalidate>
+                    <div class="form-group" ng-class="{ 'has-error' : addStudentFrom._id.$error.required && !addStudentFrom._id.$pristine }">
+                        <label for="_id" class="col-sm-2 control-label">register number</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="_id" name="_id" placeholder="Enter register number"
+                        ng-model="student._id" required>
+                          <span ng-show="addStudentFrom._id.$error.required && !addStudentFrom._id.$pristine" class="help-block">register number is required.</span>
+                      </div>
+                    </div>
+					<div class="form-group" ng-class="{ 'has-error' : addStudentFrom.name.$error.required && !addStudentFrom.name.$pristine }">
+                        <label for="name" class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name"
+                        ng-model="student.name" required>
+                          <span ng-show="addStudentFrom.name.$error.required && !addStudentFrom.name.$pristine" class="help-block"> name is required.</span>
+                      </div>
+                    </div>
+					<div class="form-group" ng-class="{ 'has-error' : addStudentFrom.branch.$error.required && !addStudentFrom.branch.$pristine }">
+                        <label for="branch" class="col-sm-2 control-label">Branch</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="branch" name="branch" placeholder="Enter Branch"
+                        ng-model="student.branch" required>
+                          <span ng-show="addStudentFrom.branch.$error.required && !addStudentFrom.branch.$pristine" class="help-block">Branch is required.</span>
+                      </div>
+                    </div>
+					<div class="form-group" ng-class="{ 'has-error' : addStudentFrom.sem.$error.required && !addStudentFrom.sem.$pristine }">
+                        <label for="sem" class="col-sm-2 control-label">semister</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="sem" name="sem" placeholder="Enter semister"
+                        ng-model="student.sem" required>
+                          <span ng-show="addStudentFrom.sem.$error.required && !addStudentFrom.sem.$pristine" class="help-block">semister is required.</span>
+                      </div>
+                    </div>
+					<div class="form-group" ng-class="{ 'has-error' : addStudentFrom.year_of_join.$error.required && !addStudentFrom.year_of_join.$pristine }">
+                        <label for="year_of_join" class="col-sm-2 control-label">year_of_join</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="year_of_join" name="year_of_join" placeholder="Enter year_of_join"
+                        ng-model="student.year_of_join" required>
+                          <span ng-show="addStudentFrom.year_of_join.$error.required && !addStudentFrom.year_of_join.$pristine" class="help-block">year_of_join is required.</span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary" ng-disabled="addStudentFrom.$invalid">Add student</button>
+                        </div>
+                    </div>
+					<!--<div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+						ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
+						ngf-resize="{width: 100, height: 100}">Select
+					</div>
+					<div class="form-group">
+						<input type="file" ngf-select ng-model="student.file" name="file">
+					</div>-->
+                </form>
+				<div class="alert alert-success" ng-if="showStudAlertSuccess === true">
+				  <strong>Success!</strong>Added student successfuly
+				</div>
+				<div class="alert alert-warning" ng-if="showStudAlertWarn === true">
+				  <strong>Warning!</strong>Failed...Enter valid student details
+				</div>
+            </div>
+			<!--<div class="col-xs-12 col-sm-3">
+				<div class="button" ngf-select="upload($file)">Upload on file select</div>
+			</div>-->
+			<div class="col-xs-12 col-sm-3">
+				<input type="file" ngf-select="upload($file)">
+			</div>
+       </div>
+	   <!--<div class="col-xs-12 col-sm-3">
+			<input type="file" ngf-select="onFileSelect($file)">
+		</div>-->
+	   <div class="row row-content">
+           <div class="col-xs-12">
+              <h3>Delete student</h3> 
+           </div>
+            <div class="col-xs-12 col-sm-9">
+                <form class="form-horizontal" role="form" name="DelStudForm"  novalidate>
+					<div class="form-group" ng-class="{ 'has-error' : DelStudForm._id.$error.required && !DelStudForm._id.$pristine }">
+                        <label for="_id" class="col-sm-2 control-label">register number</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="_id" name="_id" placeholder="Enter register number"
+                        ng-model="DelStudReg" required>
+                          <span ng-show="DelStudForm._id.$error.required && !DelStudForm._id.$pristine" class="help-block">register number is required.</span>
+                      </div>
+                    </div>
+					<div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" ng-click="DeleteStud()" class="btn btn-primary" ng-disabled="DelStudForm.$invalid">Delete student</button>
+                        </div>
+                    </div>
+				</form>
+			<div class="alert alert-success" ng-if="DelStudAlertSuccess === true">
+			  <strong>Success!</strong>Deleted subject successfuly
+			</div>
+			<div class="alert alert-warning" ng-if="DelStudAlertWarn === true">
+			  <strong>Warning!</strong>Failed...Enter valid details
+			</div>
+			</div>
+		</div>
+	   
+	   <div class="row row-content">
+           <div class="col-xs-12">
+              <h3>Add/modify student's subject details</h3> 
+           </div>
+            <div class="col-xs-12 col-sm-9">
+                <form class="form-horizontal" role="form" name="addModStudForm"  novalidate>
+					<div class="form-group" ng-class="{ 'has-error' : addModStudForm._id.$error.required && !addModStudForm._id.$pristine }">
+                        <label for="_id" class="col-sm-2 control-label">register number</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="_id" name="_id" placeholder="Enter register number"
+                        ng-model="addModStudReg" required>
+                          <span ng-show="addModStudForm._id.$error.required && !addModStudForm._id.$pristine" class="help-block">register number is required.</span>
+                      </div>
+                    </div>
+					<div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" ng-click="addModStud()" class="btn btn-primary" ng-disabled="addModStudForm.$invalid">Modify</button>
+							<button ng-click="addSubject()" class="btn btn-primary" ng-disabled="addModStudForm.$invalid">Add</button>
+                        </div>
+                    </div>
+				</form>
+			</div>
+		<!--</div>
+		
+		<div class="row row-content" ng-if="showModify">-->
+		<div ng-if="showModify">
+			<table class="table table-responsive">
+				<tr>
+					<th>
+						Subject
+					</th>
+					<th>
+						Attendance
+					</th>
+					<th>
+						Marks
+					</th>
+					<th>
+					</th>
+				</tr>
+				<tr ng-repeat="subs in addModStudent.subjects">
+					<form class="form-horizontal" name="forms.ModSubjectForm_{{$index}}">
+						<td>{{subs.name}}</td>
+						<td><input type="text" class="form-control" id="attendance_{{$index}}" name="attendance_{{$index}}" ng-model="subs.attendance" required>
+							<span ng-show="forms.ModSubjectForm_{{$index}}.attendance_{{$index}}.$error.required && !forms.ModSubjectForm_{{$index}}.attendance_{{$index}}.$pristine" class="help-block"> attendance is required</span>
+						</td>
+						<td><input ng-model="subs.marks"  required></td>
+						<td><button ng-click="ModStudSubj(subs)" class="btn btn-primary">Submit modifications</button></td>
+						<td><button ng-click="DelStudSubj(subs)" class="btn btn-primary">Delete subject</button></td>
+					</form>
+				</tr>
+			</table>
+				<tr>
+					<div class="alert alert-success" ng-if="DelSubAlertSuccess === true">
+					  <strong>Success!</strong>Deleted subject successfuly
+					</div>
+					<div class="alert alert-warning" ng-if="DelSubAlertWarn === true">
+					  <strong>Warning!</strong>Failed to delete subject
+					</div>
+				</tr>
+		</div>
+		
+		<div class="col-xs-12 col-sm-9" ng-if="showAddSub">
+			<form class="form-horizontal" role="form" name="forms.addSubjectForm" ng-submit="addSubjectDetail()" novalidate>
+				<div class="form-group" ng-class="{ 'has-error' : forms.addSubjectForm.name.$error.required && !forms.addSubjectForm.name.$pristine }">
+					<label for="name" class="col-sm-2 control-label">Subject name</label>
+					<div class="col-sm-10">
+					<input type="text" class="form-control" id="name" name="name" ng-model="subject.name" required>
+					  <span ng-show="forms.addSubjectForm.name.$error.required && !forms.addSubjectForm.name.$pristine" class="help-block"> name is required.</span>
+				  </div>
+				</div>
+				<div class="form-group" ng-class="{ 'has-error' : forms.addSubjectForm.attendance.$error.required && !forms.addSubjectForm.attendance.$pristine }">
+					<label for="attendance" class="col-sm-2 control-label">attendance</label>
+					<div class="col-sm-10">
+					<input type="text" class="form-control" id="attendance" name="attendance" ng-model="subject.attendance" required>
+					  <span ng-show="forms.addSubjectForm.attendance.$error.required && !forms.addSubjectForm.attendance.$pristine" class="help-block">attendance is required.</span>
+				  </div>
+				</div>
+				<div class="form-group" ng-class="{ 'has-error' : forms.addSubjectForm.marks.$error.required && !forms.addSubjectForm.marks.$pristine }">
+					<label for="marks" class="col-sm-2 control-label">marks</label>
+					<div class="col-sm-10">
+					<input type="text" class="form-control" id="marks" name="marks" ng-model="subject.marks" required>
+					  <span ng-show="forms.addSubjectForm.marks.$error.required && !forms.addSubjectForm.marks.$pristine" class="help-block">marks is required.</span>
+				  </div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-primary" ng-disabled="forms.addSubjectForm.$invalid">Add subject</button>
+					</div>
+				</div>
+			</form>
+			<div class="alert alert-success" ng-if="AddSubAlertSuccess === true">
+			  <strong>Success!</strong>Added subject successfuly
+			</div>
+			<div class="alert alert-warning" ng-if="AddSubAlertWarn === true">
+			  <strong>Warning!</strong>Failed...Enter valid details
+			</div>
+		</div>
+		</div>
+
+    </div>

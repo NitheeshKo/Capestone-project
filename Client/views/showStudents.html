@@ -1,0 +1,138 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+		   <ul class="breadcrumb">
+			   <li><a href="#">Home</a></li>
+			   <li class="active">Student details</li>
+		   </ul>
+		</div> 
+	</div>
+	
+	<div class="row row-content">
+	   <div class="col-xs-12">
+		  <h3>Student details:</h3> 
+	   </div>
+	   <div class="col-xs-12 col-sm-9">
+			<form class="form-horizontal" name="semForm" ng-submit="SemSelect()" novalidate>
+                    <div class="form-group">
+                       <label for="semister" class="col-sm-4 control-label">
+                        Students of semister</label>
+                        <div class="col-sm-8">
+							<label class="radio-inline">
+                            <input type="radio" name="sem" ng-model="sem"
+                             id="sem0" value=0> All students
+                            </label>
+                            <label class="radio-inline">
+								<input type="radio" name="sem" ng-model="sem"
+								 id="sem1" value=1> 1
+                            </label>
+                            <label class="radio-inline">
+								<input type="radio" name="sem" ng-model="sem"
+								 id="sem2" value=2 checked> 2
+                            </label>
+                            <label class="radio-inline">
+								<input type="radio" name="sem" ng-model="sem"
+								 id="sem3" value=3> 3
+                            </label>
+                            <label class="radio-inline">
+								<input type="radio" name="sem" ng-model="sem"
+								 id="sem4" value=4> 4
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="sem" ng-model="sem"
+                                 id="sem5" value=5> 5
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="sem" ng-model="sem"
+                                 id="sem6" value=6> 6
+                            </label>
+                             <label class="radio-inline">
+                                <input type="radio" name="sem" ng-model="sem"
+                                 id="sem7" value=7> 7
+                            </label>
+                             <label class="radio-inline">
+                                <input type="radio" name="sem" ng-model="sem"
+                                 id="sem8" value=8> 8
+                            </label>
+                        </div>
+						<label for="branch" class="col-sm-4 control-label">
+                        Students of branch</label>
+                        <div class="col-sm-8">
+							<label class="radio-inline">
+                            <input type="radio" name="branch" ng-model="branch"
+                             id="branch0" value=0> All branch
+                            </label>
+                            <label class="radio-inline">
+								<input type="radio" name="branch" ng-model="branch"
+								 id="branch1" value="ECE"> ECE
+                            </label>
+                            <label class="radio-inline">
+								<input type="radio" name="branch" ng-model="branch"
+								 id="branch2" value="CSE"> CSE
+                            </label>
+                            <label class="radio-inline">
+								<input type="radio" name="branch" ng-model="branch"
+								 id="branch3" value="ISE"> ISE
+                            </label>
+                            <label class="radio-inline">
+								<input type="radio" name="branch" ng-model="branch"
+								 id="branch4" value="ME"> ME
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="branch" ng-model="branch"
+                                 id="branch5" value="IT"> IT
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="branch" ng-model="branch"
+                                 id="branch6" value="CV"> CV
+                            </label>
+                             <label class="radio-inline">
+                                <input type="radio" name="branch" ng-model="branch"
+                                 id="branch7" value="BM"> BM
+                            </label>
+                             <label class="radio-inline">
+                                <input type="radio" name="branch" ng-model="branch"
+                                 id="branch8" value="BT"> BT
+                            </label>
+                        </div>
+                    </div>                    
+                    <!--<div class="form-group">
+                        <div class="col-sm-push-6 col-sm-10">
+                            <button type="submit" class="btn btn-primary" ng-disabled="semForm.$invalid">Get students</button>
+                        </div>
+                    </div>-->
+                </form>
+		</div>
+	</div>
+	<div class="row row-content">
+		<div ng-if="!showStudents">
+			<h3>{{message}}</h3>
+		</div>
+		<div class="media" ng-if="showStudents">
+			<div class="col-xs-12 col-sm-6 col-sm-push-3">
+				 <table class="table table-striped">
+					<tr>
+						<th>
+							Name
+						</th>
+						<th>
+							Branch
+						</th>
+						<th>
+							Semister
+						</th>
+						<th>
+							Year of Joining
+						</th>
+					</tr>
+					<tr ng-repeat="stud in students" ng-if="(stud.sem==sem || sem==0) && (stud.branch==branch || branch==0)">
+						<td>{{stud.name}}</td>
+						<td>{{stud.branch}}</td>
+						<td>{{stud.sem}}</td>
+						<td>{{stud.year_of_join}}</td>
+					</tr>
+				 </table>
+			</div>
+		</div>
+	</div>
+</div>

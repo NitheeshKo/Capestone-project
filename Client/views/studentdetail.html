@@ -1,0 +1,163 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+               <ul class="breadcrumb">
+                   <li><a href="index.html">Home</a></li>
+                   <li class="active">Profile</li>
+               </ul>
+            </div>
+            <!--<div class="col-xs-12">
+               <h3>My Favorites</h3>
+               <hr>
+            </div>-->
+        </div>
+        <div class="row row-content">
+			<div ng-if="!showStudent">
+				<h3>{{message}}</h3>
+			</div>
+            <div class="media" ng-if="showStudent">
+				<div class="col-xs-12 col-sm-6">
+					<div class="media-center media-middle">
+						<a href="#">
+						<img id="profilePic" class="media-object img-thumbnail" 
+						ng-src="{{profileimage}}" alt="profile_picture" style="width:140px;height:180px;">
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					 <table class="table table-striped">
+						<tr>
+							<td>
+								&nbsp;
+							</td>
+							<th>
+								Details
+							</th>
+						</tr>
+						<tr>
+							<th>
+								Name
+							</th>
+							<td>
+								{{student.name}}
+							</td>
+						</tr>
+						<tr>
+							<th>
+								Branch
+							</th>
+							<td>
+								{{student.branch}}
+							</td>
+						</tr>
+						<tr>
+							<th>
+								Semister
+							</th>
+							<td>
+								{{student.sem}}
+							</td>
+						</tr>
+						<tr>
+							<th>
+								Year of Joining
+							</th>
+							<td>
+								{{student.year_of_join}}
+							</td>
+						</tr>
+					</table>			
+				</div>
+			</div>
+            <!--<div class="col-xs-12 col-sm-3 col-sm-push-9">
+                <p style="padding:20px;"></p>
+                <h3 align=center>Our Lipsmacking Culinary Creations</h3>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+                <div ng-if="!showDish">
+                    <h3>{{message}}</h3>
+                </div>
+                <div class="media" ng-if="showDish">
+                    <div class="media-left media-middle">
+                        <a href="#">
+                        <img class="media-object img-thumbnail" 
+                        ng-src={{dish.image}} alt="Uthappizza">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">{{dish.name}} 
+                        <span class="label label-danger">{{dish.label}}</span> 
+                        <span class="badge">{{dish.price/100 | currency}}</span></h2>
+                        <p>{{dish.description}}</p>
+                    </div>
+                </div>-->
+			<!--	<div class="media" ng-if="showStudent">
+                    <div class="media-left media-middle">
+                        <a href="#">
+                        <img class="media-object img-thumbnail" 
+                        ng-src="images/alberto.png" alt="Uthappizza">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h2>{{student.name}}</h2>
+						<h2>{{student.branch}}</h2>
+						<h2>{{student.sem}}</h2>
+						<h2>{{student.year_of_join}}</h2>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+
+
+        <!--<div class="row row-content">
+            <div class="col-xs-12 col-sm-3">
+                <p style="padding:20px;"></p>
+                <h3 align=center>This Month's Promotions</h3>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                <div ng-if="!showPromotion">
+                    <h3>{{message}}</h3>
+                </div>
+                <div class="media" ng-if="showPromotion">
+                    <div class="media-body">
+                        <h2 class="media-heading">{{promotion.name}} 
+                        <span class="label label-danger label-xs">{{promotion.label}}</span>
+                        <span class="badge">{{promotion.price/100 | currency}}</span></h2>
+                        <p>{{promotion.description}}</p>
+                    </div>
+                    <div class="media-right media-middle">
+                        <a href="#">
+                        <img class="media-object img-thumbnail" 
+                        ng-src="{{promotion.image}}" alt="Weekend Grand Buffet">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3 col-sm-push-9">
+                <p style="padding:20px;"></p>
+                <h3 align=center>Meet our Culinary Specialists</h3>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+                <div ng-if="!showLeader">
+                    <h3>{{message}}</h3>
+                </div>
+                <div class="media" ng-if="showLeader">
+                    <div class="media-left media-middle">
+                        <a>
+                        <img class="media-object img-thumbnail"
+                        ng-src={{leader.image}} alt="Peter Pan">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">{{leader.name}}
+                        <small>{{leader.designation}}</small></h3>
+                        <p>{{leader.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </div>

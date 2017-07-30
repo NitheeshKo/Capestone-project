@@ -1,0 +1,39 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+               <ul class="breadcrumb">
+                   <li><a href="index.html">Home</a></li>
+                   <li class="active">Subject details</li>
+               </ul>
+            </div>
+        </div>
+        
+        
+	   <div class="row row-content">
+            <div class="col-xs-12 col-sm-9">
+                <h2>Facts &amp; Figures</h2>
+				<div ng-if="!showStudent">
+					<h3>{{message}}</h3>
+				</div>
+				<div class="media" ng-if="showStudent">
+					<div class="table-responsive">
+						<table class="table table-striped">
+							<tr>
+								<th>Subject</th>
+								<th>Attendance</th>
+								<th>Marks</th>
+							</tr>
+							<tr ng-repeat="subject in student.subjects">
+								<td>{{subject.name}}</td>
+								<td>{{subject.attendance}}</td>
+								<td>{{subject.marks}}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+				
+        
+    </div>
